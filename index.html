@@ -4,28 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aryan Kupekar | Electronics & VLSI Engineer Portfolio</title>
-
-  <!-- Open Graph / LinkedIn Preview Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aryans-portfolio-two.vercel.app/">
-  <meta property="og:title" content="Aryan Kupekar | Electronics & VLSI Engineer">
-  <meta property="og:description" content="B.Tech EXTC Student at SPIT Mumbai specializing in VLSI, STM32 Embedded Systems, RTL Design, and Hardware Engineering.">
-  <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4D03AQGZyrdNTdN94w/profile-displayphoto-scale_400_400/B4DZxRtaJuJEAg-/0/1770897386724?e=1795651200&v=beta&t=0HqvRLrvBEALFkKQFLfkZo2br6sZ3EYanVHB_23yzoI">
-
-  <!-- Twitter Card Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aryan Kupekar | Hardware & VLSI Engineer">
-  <meta name="twitter:description" content="Portfolio of Aryan Kupekar - Embedded Systems, Hardware Design & VLSI.">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
   <style>
     :root {
       --bg-color: #07090e;
-      --card-bg: rgba(17, 24, 39, 0.75);
+      --card-bg: rgba(17, 24, 39, 0.7);
       --card-border: rgba(255, 255, 255, 0.08);
       --accent: #38bdf8;
       --accent-glow: rgba(56, 189, 248, 0.25);
@@ -67,21 +52,21 @@
       position: relative;
     }
 
-    /* Ambient Background Glow */
+    /* Background Glow Effects */
     body::before {
       content: '';
       position: fixed;
       top: -250px;
       left: 50%;
       transform: translateX(-50%);
-      width: 750px;
-      height: 750px;
+      width: 700px;
+      height: 700px;
       background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
       z-index: -1;
       pointer-events: none;
     }
 
-    /* Scroll Progress Indicator */
+    /* Top Progress Bar */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -93,14 +78,14 @@
       transition: width 0.1s ease-out;
     }
 
-    /* Layout Container */
+    /* Container */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* Header & Navbar */
+    /* Header & Navigation */
     header {
       position: sticky;
       top: 0;
@@ -140,6 +125,7 @@
       font-size: 0.9rem;
       font-weight: 600;
       transition: all 0.2s ease;
+      position: relative;
     }
 
     .nav-links a:hover {
@@ -209,7 +195,6 @@
       text-decoration: none;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
-      border: none;
     }
 
     .btn-primary {
@@ -236,7 +221,7 @@
       transform: translateY(-3px);
     }
 
-    /* Hero Profile Image */
+    /* Hero Profile Image Avatar */
     .hero-image-wrapper {
       position: relative;
     }
@@ -268,7 +253,7 @@
       transform: scale(1.03);
     }
 
-    /* Section Styling */
+    /* Section Global */
     section {
       padding: 5rem 0;
       border-top: 1px solid var(--card-border);
@@ -284,7 +269,7 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Category Filter Tabs */
+    /* Interactive Tab Switching for Skills */
     .tab-container {
       display: flex;
       gap: 0.75rem;
@@ -302,7 +287,7 @@
       font-weight: 600;
       font-size: 0.875rem;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.25 ease;
     }
 
     .tab-btn.active, .tab-btn:hover {
@@ -311,7 +296,7 @@
       border-color: var(--accent);
     }
 
-    /* Grid System */
+    /* Grid Layouts */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -328,9 +313,6 @@
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .card::before {
@@ -368,20 +350,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .project-highlight {
-      display: inline-block;
-      font-size: 0.8rem;
-      color: var(--gold);
-      background: rgba(251, 191, 36, 0.1);
-      border: 1px solid rgba(251, 191, 36, 0.3);
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      width: fit-content;
-    }
-
-    /* Certificate & Project Link Buttons */
+    /* Certificate Buttons */
     .cert-btn {
       display: inline-flex;
       align-items: center;
@@ -395,7 +364,6 @@
       font-weight: 600;
       text-decoration: none;
       transition: all 0.25s ease;
-      width: fit-content;
     }
 
     .cert-btn:hover {
@@ -404,7 +372,7 @@
       transform: translateY(-2px);
     }
 
-    /* Skills & Tech Stack Tags */
+    /* Skills List */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
@@ -427,69 +395,6 @@
       color: var(--accent);
     }
 
-    /* Interactive Resume Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(4, 7, 14, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 3000;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #111827;
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      width: 90%;
-      max-width: 900px;
-      height: 85vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .modal-header {
-      padding: 1.25rem 1.75rem;
-      border-bottom: 1px solid var(--card-border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .modal-header h3 {
-      font-size: 1.15rem;
-      color: var(--text-primary);
-    }
-
-    .close-btn {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .close-btn:hover {
-      color: var(--accent);
-    }
-
-    .modal-body {
-      flex: 1;
-      width: 100%;
-    }
-
-    .modal-body iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
     /* Footer */
     footer {
       padding: 3.5rem 0;
@@ -499,7 +404,7 @@
       border-top: 1px solid var(--card-border);
     }
 
-    /* Responsive */
+    /* Responsive Design */
     @media (max-width: 768px) {
       .hero {
         flex-direction: column-reverse;
@@ -522,7 +427,7 @@
 </head>
 <body>
 
-  <!-- Top Progress Bar -->
+  <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="progressBar"></div>
 
   <!-- Header Navigation -->
@@ -533,7 +438,6 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#achievements">Achievements</a></li>
           <li><a href="#resume">Resume</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -542,7 +446,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Profile Picture -->
   <main class="container">
     <section class="hero" id="about">
       <div class="hero-content">
@@ -551,7 +455,7 @@
         <p>Electronics & Telecommunication Engineering student specializing in VLSI, Embedded Systems, Circuit Debugging, and Hardware Design.</p>
         <div class="hero-buttons">
           <a href="#contact" class="btn btn-primary">Get In Touch</a>
-          <button onclick="openModal()" class="btn btn-secondary">Preview Resume</button>
+          <a href="certificates/Aryan_Kupekar_Resume.pdf" target="_blank" class="btn btn-secondary">View Resume</a>
           <a href="https://github.com/aryankupekar2005-afk" target="_blank" class="btn btn-secondary">GitHub</a>
         </div>
       </div>
@@ -560,7 +464,7 @@
       </div>
     </section>
 
-    <!-- Technical Skills with Tabs -->
+    <!-- Technical Skills with Interactive Category Tabs -->
     <section id="skills">
       <h2 class="section-title">Technical Expertise</h2>
       
@@ -573,10 +477,8 @@
 
       <div class="grid">
         <div class="card skill-card" data-category="core">
-          <div>
-            <h3>Core Domains</h3>
-            <p>Digital & Analog Circuit Design, CMOS Fundamentals, Embedded Hardware, Circuit Debugging.</p>
-          </div>
+          <h3>Core Domains</h3>
+          <p>Digital & Analog Circuit Design, CMOS Fundamentals, Embedded Hardware, Circuit Debugging.</p>
           <div class="skills-list">
             <span class="skill-tag">Digital Electronics</span>
             <span class="skill-tag">Analog Circuits</span>
@@ -585,10 +487,8 @@
           </div>
         </div>
         <div class="card skill-card" data-category="hdl">
-          <div>
-            <h3>HDL & Embedded C</h3>
-            <p>Firmware development and hardware description languages for microcontrollers & FPGAs.</p>
-          </div>
+          <h3>HDL & Embedded C</h3>
+          <p>Firmware development and hardware description languages for microcontrollers & FPGAs.</p>
           <div class="skills-list">
             <span class="skill-tag">Verilog (RTL)</span>
             <span class="skill-tag">VHDL</span>
@@ -597,10 +497,8 @@
           </div>
         </div>
         <div class="card skill-card" data-category="tools">
-          <div>
-            <h3>Tools & Software</h3>
-            <p>Industry standard tools for simulation, schematics, and embedded programming.</p>
-          </div>
+          <h3>Tools & Software</h3>
+          <p>Industry standard tools for simulation, schematics, and embedded programming.</p>
           <div class="skills-list">
             <span class="skill-tag">Vivado</span>
             <span class="skill-tag">STM32CubeIDE</span>
@@ -611,95 +509,37 @@
       </div>
     </section>
 
-    <!-- Featured Engineering Projects -->
-    <section id="projects">
-      <h2 class="section-title">Featured Engineering Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <div>
-            <span class="project-highlight">IoT Hardware System</span>
-            <h3>IoT Dumper Weight Measurement System</h3>
-            <p>Designed and built an IoT weight tracking system evaluated at state-level technical exhibition DIPEX 2025 (4.8/5 rating and incubation offer).</p>
-          </div>
-          <div class="skills-list" style="margin-bottom: 1.25rem;">
-            <span class="skill-tag">STM32 / Load Cell</span>
-            <span class="skill-tag">HX711</span>
-            <span class="skill-tag">IoT Dashboard</span>
-          </div>
-          <a href="certificates/Dipexcertificate.jpg" target="_blank" class="cert-btn">👁️ View Certificate</a>
-        </div>
-
-        <div class="card">
-          <div>
-            <span class="project-highlight">Embedded Firmware</span>
-            <h3>Cargo Vehicle Overload Protection System</h3>
-            <p>Engineered a microcontroller-driven overload prevention mechanism featuring load cell sensors, HX711 amplifiers, OLED display, ignition-cut relay, and web monitoring.</p>
-          </div>
-          <div class="skills-list" style="margin-bottom: 1.25rem;">
-            <span class="skill-tag">STM32 Controller</span>
-            <span class="skill-tag">SSD1306 OLED</span>
-            <span class="skill-tag">Ignition Control</span>
-          </div>
-          <a href="https://github.com/aryankupekar2005-afk" target="_blank" class="cert-btn">💻 View GitHub Repo</a>
-        </div>
-
-        <div class="card">
-          <div>
-            <span class="project-highlight">Robotics & Control</span>
-            <h3>e-Yantra Robotics Competition (IIT Bombay)</h3>
-            <p>Developed autonomous embedded control systems, task allocation algorithms, and firmware logic for competition track milestones.</p>
-          </div>
-          <div class="skills-list" style="margin-bottom: 1.25rem;">
-            <span class="skill-tag">Robotics</span>
-            <span class="skill-tag">Embedded C</span>
-            <span class="skill-tag">IIT Bombay</span>
-          </div>
-          <a href="https://github.com/aryankupekar2005-afk" target="_blank" class="cert-btn">💻 View Code</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Achievements & Certifications -->
+    <!-- Achievements & Verification -->
     <section id="achievements">
       <h2 class="section-title">Key Achievements & Certifications</h2>
       <div class="grid">
         <div class="card">
-          <div>
-            <h3>DIPEX 2025 National Recognition</h3>
-            <p>Exhibited IoT-based hardware project at the prestigious state level technical showcase.</p>
-          </div>
+          <h3>DIPEX 2025 National Recognition</h3>
+          <p>Exhibited IoT-based hardware project at the prestigious state level technical showcase.</p>
           <a href="certificates/Dipexcertificate.jpg" target="_blank" class="cert-btn">👁️ View Certificate</a>
         </div>
 
         <div class="card">
-          <div>
-            <h3>BugBuster 3.0 Hardware Hackathon</h3>
-            <p>National Hardware Hackathon achievement focusing on circuit design and real-time debugging.</p>
-          </div>
+          <h3>BugBuster 3.0 Hardware Hackathon</h3>
+          <p>National Hardware Hackathon achievement focusing on circuit design and real-time debugging.</p>
           <a href="certificates/bugbustercertificate.pdf" target="_blank" class="cert-btn">👁️ View Certificate</a>
         </div>
 
         <div class="card">
-          <div>
-            <h3>UNPLUGGED 24-Hr Hardware Hackathon</h3>
-            <p>24-hour intensive hardware building hackathon hosted at DJSCE.</p>
-          </div>
+          <h3>UNPLUGGED 24-Hr Hardware Hackathon</h3>
+          <p>24-hour intensive hardware building hackathon hosted at DJSCE.</p>
           <a href="certificates/UnpluggesdhackathonDJS.png" target="_blank" class="cert-btn">👁️ View Certificate</a>
         </div>
 
         <div class="card">
-          <div>
-            <h3>Best Academics Award 2025</h3>
-            <p>Graduated 1st Rank in Diploma in Electronics & Telecommunication Engineering at ICRE Gargoti.</p>
-          </div>
+          <h3>Best Academics Award 2025</h3>
+          <p>Graduated 1st Rank in Diploma in Electronics & Telecommunication Engineering at ICRE Gargoti.</p>
           <a href="certificates/2ndyearresultdiplomacertoficate.jpg" target="_blank" class="cert-btn">👁️ View Certificate</a>
         </div>
 
         <div class="card">
-          <div>
-            <h3>1st Rank Football Championship</h3>
-            <p>Competitive athletic distinction in regional school football tournament.</p>
-          </div>
+          <h3>1st Rank Football Championship</h3>
+          <p>Competitive athletic distinction in regional school football tournament.</p>
           <a href="certificates/Footballcerti.jpg" target="_blank" class="cert-btn">👁️ View Certificate</a>
         </div>
       </div>
@@ -708,15 +548,12 @@
     <!-- Resume Section -->
     <section id="resume">
       <h2 class="section-title">Resume & Academic Background</h2>
-      <div class="card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+      <div class="card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
         <div>
           <h3>Aryan Rajshree Nandkumar Kupekar</h3>
           <p style="margin-bottom: 0;">B.Tech EXTC Student | Electronics, Embedded Systems & Hardware Engineering</p>
         </div>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <button onclick="openModal()" class="btn btn-secondary">Preview Resume</button>
-          <a href="certificates/Aryan_Kupekar_Resume.pdf" target="_blank" class="btn btn-primary">Download PDF</a>
-        </div>
+        <a href="certificates/Aryan_Kupekar_Resume.pdf" target="_blank" class="btn btn-primary">View Official Resume (PDF)</a>
       </div>
     </section>
 
@@ -724,9 +561,7 @@
     <section id="contact">
       <h2 class="section-title">Connect With Me</h2>
       <div class="card">
-        <div>
-          <p>Open for hardware engineering internships, VLSI research collaboration, and embedded firmware projects.</p>
-        </div>
+        <p>Open for hardware engineering internships, VLSI research collaboration, and embedded firmware projects.</p>
         <div class="hero-buttons">
           <a href="https://github.com/aryankupekar2005-afk" target="_blank" class="btn btn-secondary">GitHub Profile</a>
           <a href="https://aryans-portfolio-two.vercel.app/" target="_blank" class="btn btn-primary">Share Live Portfolio</a>
@@ -735,19 +570,6 @@
     </section>
   </main>
 
-  <!-- Resume Preview Modal -->
-  <div class="modal" id="resumeModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3>Aryan Kupekar — Resume Preview</h3>
-        <button class="close-btn" onclick="closeModal()">×</button>
-      </div>
-      <div class="modal-body">
-        <iframe src="certificates/Aryan_Kupekar_Resume.pdf"></iframe>
-      </div>
-    </div>
-  </div>
-
   <footer>
     <div class="container">
       <p>© 2026 Aryan Rajshree Nandkumar Kupekar. All Rights Reserved.</p>
@@ -755,7 +577,7 @@
   </footer>
 
   <script>
-    // Scroll progress bar
+    // Scroll progress bar calculator
     window.onscroll = function() {
       let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -763,7 +585,7 @@
       document.getElementById("progressBar").style.width = scrolled + "%";
     };
 
-    // Skill filter tabs
+    // Skill filter tab function
     function filterSkills(category) {
       const cards = document.querySelectorAll('.skill-card');
       const buttons = document.querySelectorAll('.tab-btn');
@@ -773,29 +595,12 @@
 
       cards.forEach(card => {
         if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'flex';
+          card.style.display = 'block';
         } else {
           card.style.display = 'none';
         }
       });
     }
-
-    // Resume Modal Controls
-    function openModal() {
-      document.getElementById('resumeModal').style.display = 'flex';
-    }
-
-    function closeModal() {
-      document.getElementById('resumeModal').style.display = 'none';
-    }
-
-    // Close modal on outer click
-    window.onclick = function(event) {
-      const modal = document.getElementById('resumeModal');
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    };
   </script>
 
 </body>
