@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Kupekar | Electronics & VLSI Engineer Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.25);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+            --gold: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            padding: 8rem 1.5rem 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .headline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.65rem 1.25rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 15px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            background: var(--card-bg);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 40%;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .card-content {
+            margin-bottom: 1.25rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .resume-box {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .resume-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .resume-box p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.1rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Aryan Kupekar</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Certificates</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="about">
+        <span class="badge">SPIT Mumbai | B.Tech EXTC '28</span>
+        <h1>Aryan Rajshree Nandkumar Kupekar</h1>
+        <p class="headline">Electronics & Telecommunication Engineering Student specializing in <strong>VLSI Physical Design, Design Verification, and Embedded Hardware</strong>.</p>
+        <div class="btn-group">
+            <a href="mailto:aryankupekar2005@gmail.com" class="btn btn-primary">Get in Touch</a>
+            <a href="#resume" class="btn btn-secondary">View / Download Resume</a>
+            <a href="https://linkedin.com/in/shon9123" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+            <a href="https://github.com/aryankupekar2005-afk" target="_blank" class="btn btn-secondary">GitHub</a>
+        </div>
+    </header>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="skills-category">
+                        <h3>Core Domains</h3>
+                        <div class="tag-group">
+                            <span class="tag">Digital Design</span>
+                            <span class="tag">Analog Electronics</span>
+                            <span class="tag">CMOS Fundamentals</span>
+                            <span class="tag">Embedded Hardware</span>
+                            <span class="tag">Circuit Debugging</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>Microcontrollers & Hardware</h3>
+                        <div class="tag-group">
+                            <span class="tag">STM32</span>
+                            <span class="tag">ARM LPC2148</span>
+                            <span class="tag">PIC18</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">ESP8266</span>
+                            <span class="tag">8051</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="skills-category">
+                        <h3>HDL, Firmware & Interfaces</h3>
+                        <div class="tag-group">
+                            <span class="tag">Verilog (RTL)</span>
+                            <span class="tag">VHDL</span>
+                            <span class="tag">Embedded C</span>
+                            <span class="tag">UART</span>
+                            <span class="tag">SPI</span>
+                            <span class="tag">I2C</span>
+                            <span class="tag">ADC</span>
+                        </div>
+                    </div>
+                    <div class="skills-category">
+                        <h3>EDA & Simulation Tools</h3>
+                        <div class="tag-group">
+                            <span class="tag">Xilinx Vivado</span>
+                            <span class="tag">Microwind</span>
+                            <span class="tag">LTspice</span>
+                            <span class="tag">Proteus</span>
+                            <span class="tag">Keil µVision</span>
+                            <span class="tag">STM32CubeIDE</span>
+                            <span class="tag">MATLAB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Engineering Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Dumper Weight Measurement System</div>
+                    <div class="card-subtitle">National Level Recognition — DIPEX 2025</div>
+                    <p class="card-text">Integrated load cells and microcontrollers into a dumper weight measurement system under the theme SAFETY for real-time cargo monitoring.</p>
+                    <div class="tag-group">
+                        <span class="tag">Load Cells</span>
+                        <span class="tag">Microcontrollers</span>
+                        <span class="tag">IoT Systems</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://github.com/aryankupekar2005-afk" class="btn btn-secondary" target="_blank">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Microcontroller-Based Overload Protection</div>
+                    <div class="card-subtitle">Embedded Hardware Systems</div>
+                    <p class="card-text">STM32-based cargo vehicle overload system with load sensing, relay ignition cut-off, and active driver alert switching circuitry.</p>
+                    <div class="tag-group">
+                        <span class="tag">STM32</span>
+                        <span class="tag">Load Sensing</span>
+                        <span class="tag">Relay Control</span>
+                        <span class="tag">Embedded C</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://github.com/aryankupekar2005-afk" class="btn btn-secondary" target="_blank">View on GitHub &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">FPGA Level Detection & Load Management</div>
+                    <div class="card-subtitle">Digital Logic & Hardware Verification</div>
+                    <p class="card-text">Implemented load management system in VHDL/Verilog verified via testbenches using IR sensors, ultrasonic sensors, and servo motors.</p>
+                    <div class="tag-group">
+                        <span class="tag">FPGA</span>
+                        <span class="tag">VHDL/Verilog</span>
+                        <span class="tag">Vivado</span>
+                        <span class="tag">Testbenches</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="https://linkedin.com/in/shon9123" class="btn btn-secondary" target="_blank">View Details &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2 class="section-title">Achievements & Certificates</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">DIPEX 2025 National Level Certificate</div>
+                    <div class="card-subtitle">State Level Exhibition of Working Models (April 2025)</div>
+                    <p class="card-text">Awarded Certificate of Participation at DIPEX 2025 (34th Edition) held at COEP Technological University, Pune for the IoT Dumper Weight Measurement system.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="certificates/Dipexcertificate.jpg" target="_blank" class="btn btn-primary">👁️ View Certificate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">BugBuster 3.0 Hardware Hackathon</div>
+                    <div class="card-subtitle">National Level Hackathon — IETE SPIT (2026)</div>
+                    <p class="card-text">Awarded Certificate of Participation for BugBuster 3.0 National Level Hardware Hackathon organized by I.E.T.E. SPIT, Mumbai.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="certificates/bugbustercertificate.pdf" target="_blank" class="btn btn-primary">👁️ View Certificate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">UNPLUGGED 24-Hour Hardware Hackathon</div>
+                    <div class="card-subtitle">DJSCE IETE-ISF & DJS MicroMinds (April 11–12, 2026)</div>
+                    <p class="card-text">Participated with Team Tech_Shapes in the 24-hour national hardware hackathon hosted by Dwarkadas J. Sanghvi College of Engineering.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="certificates/UnpluggesdhackathonDJS.png" target="_blank" class="btn btn-primary">👁️ View Certificate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Second Year Academic Excellence (92.91%)</div>
+                    <div class="card-subtitle">Department of Electronics & Telecom — ICRE Gargoti</div>
+                    <p class="card-text">Certificate of Achievement awarded for outstanding academic performance in the 2nd year of Diploma (AY 2023–2024).</p>
+                </div>
+                <div class="card-actions">
+                    <a href="certificates/2ndyearresultdiplomacertoficate.jpg" target="_blank" class="btn btn-primary">👁️ View Certificate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">1st Rank Winner — Football Championship</div>
+                    <div class="card-subtitle">Sports Certificate of Achievement (2023–2024)</div>
+                    <p class="card-text">Awarded 1st Rank Winner Certificate for competitive football performance representing Department of Electronics Engineering (EJ).</p>
+                </div>
+                <div class="card-actions">
+                    <a href="certificates/Footballcerti.jpg" target="_blank" class="btn btn-primary">👁️ View Certificate</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Best Academics Award 2025 (95.00%)</div>
+                    <div class="card-subtitle">Diploma Graduation Excellence — ICRE Gargoti</div>
+                    <p class="card-text">Graduated with a 95.00% aggregate score across 3 years of diploma and received the prestigious Best Academics Award 2025.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="#resume" class="btn btn-secondary">Verified Credential</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title">Education & Experience</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">B.Tech in Electronics & Telecom</div>
+                    <div class="card-subtitle">Sardar Patel Institute of Technology (SPIT), Mumbai (2025–2028)</div>
+                    <p class="card-text">CGPA: 8.65 / 10 (Semester 5). Focus: VLSI Physical Design, Microcontrollers & System Verification.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Diploma in Electronics & Telecom</div>
+                    <div class="card-subtitle">ICRE Gargoti (2022–2025)</div>
+                    <p class="card-text">Aggregate: 95.00%. Recipient of Best Academics Award 2025 & SY Academic Excellence Certificate.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Secretary — FETS Committee</div>
+                    <div class="card-subtitle">Forum of Electronics and Telecommunication Students, SPIT</div>
+                    <p class="card-text">Led departmental communication, student forum coordination, and technical event planning (Aug 2025 – May 2026).</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Technical Intern</div>
+                    <div class="card-subtitle">Classic Communication (May 2025 – Jul 2025)</div>
+                    <p class="card-text">Troubleshot PCBs, debugged firmware faults, performed preventive maintenance, and tested electronic circuits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2 class="section-title">Resume & CV</h2>
+        <div class="resume-box">
+            <h3>Official Resume</h3>
+            <p>Get a complete copy of my resume detailing my technical skill matrix, engineering project architecture, academic credentials, and internship experience.</p>
+            <div class="btn-group" style="justify-content: center;">
+                <a href="Aryan_Kupekar_Resume.pdf" download class="btn btn-primary">📥 Download Resume (PDF)</a>
+                <a href="Aryan_Kupekar_Resume.pdf" target="_blank" class="btn btn-secondary">👁️ View Resume Online</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p><strong>Aryan Rajshree Nandkumar Kupekar</strong></p>
+        <p style="margin: 0.5rem 0;">Mumbai, India | +91 8788484785 | <a href="mailto:aryankupekar2005@gmail.com">aryankupekar2005@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/shon9123" target="_blank">LinkedIn</a> | <a href="https://github.com/aryankupekar2005-afk" target="_blank">GitHub</a></p>
+    </footer>
+
+</body>
+</html>
